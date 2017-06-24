@@ -65,29 +65,12 @@ class Cart {
         // add item to statuses in store as status "in progress"
     }
 
-
-
-
-
-
-
-
-
-
-
-   addItemtoCart() {
-        let result = '';
-       
+   addItem() {
+        let result = '  ';
         for(var i = 0; i < this.store.cartItems.length; i ++){
-            result += `<tr><td>${this.store.cartItems[i].name }
-            </td><td>${this.store.cartItems[i].price}</td>
-            <td><button class = "deleteitem" data-id="deleteitem">Delete</button></td></tr>`;
-           
-            
+            result += `<tr><td>${this.store.cartItems[i].name }</td><td>${this.store.cartItems[i].price}</td><td><button class = "deleteitem" data-id="deleteitem">Delete</button></td></tr>`;
         }
-        
-
-        return result;
+          return result;
     }
 
      
@@ -98,10 +81,10 @@ class Cart {
 
         let tbody = this.root.querySelector('tbody');
         let thead = this.root.querySelector('thead');
-        this.td = `${this.addItemtoCart()}`;
+        this.td = `${this.addItem()}`;
         
         // using innerHTML to render a list of table row item under tbody
-        tbody.innerHTML = this.addItemtoCart();
+        tbody.innerHTML = this.addItem();
 
         let deleteitem = this.root.querySelectorAll('.deleteitem');
         debugger;
